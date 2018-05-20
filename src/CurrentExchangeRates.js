@@ -13,7 +13,6 @@ class CurrentExchangeRates extends Component {
   };
 
   getCurencies = (currency, limit = 5) => {
-    console.log(`${REMOTE_URL}?convert=${currency}&limit=${limit}`);
     axios.get(`${REMOTE_URL}?convert=${currency}&limit=${limit}`)
       .then(res => {
         const curencies = res.data.data;
@@ -23,19 +22,18 @@ class CurrentExchangeRates extends Component {
   
   onChange = (e) => {
     const currency = e.target.value;
-    // this.setState({ currency });
     this.getCurencies(currency);
   };
 
   componentDidMount() {
     const currency = this.props.currency;
-    // this.setState({ currency });
     this.getCurencies(currency);
   }  
 
   render(){
     const {availible} = this.props;
-    const {currency, curencies} = this.state;
+    const {curencies} = this.state;
+    let currency = this.state.currency || this.props.currency;
 
   	return (
       <div>

@@ -2,8 +2,7 @@ import React from 'react'
 import { Table } from 'react-bootstrap';
 
 const CurrenciesTable = ({curenciesList, currency}) => {
-	console.log(curenciesList);
-	console.log(Object.values(curenciesList));
+
 	if (!Object.keys(curenciesList).length){
 	  return (
 	    <div>Loading...</div>
@@ -23,7 +22,7 @@ const CurrenciesTable = ({curenciesList, currency}) => {
 	    		<tr key={item.id}>
 	    			<td>{index+1}</td>
 	            	<td>{item.name}</td>
-	            	<td>{item.name}</td>
+	            	<td>{Number.parseFloat(item.quotes[currency]['price']).toFixed(2)}</td>
             	</tr>
 	        ))}
 		  </tbody>
