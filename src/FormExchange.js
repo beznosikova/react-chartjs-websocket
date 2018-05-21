@@ -2,16 +2,15 @@ import React from 'react'
 import { FormGroup, FormControl } from 'react-bootstrap';
 
 
-const FormExchange = ({currency, onChange, availible}) => {
+const FormExchange = ({valueSelected, onChange, availible, children}) => {
   return (
     <form  className="converter-form">
-      <h3>Select currency</h3>
+      <h3>{children}</h3>
       <FormGroup controlId="formControlsSelect">
         <FormControl 
           componentClass="select" 
           placeholder="select" 
-          name="currency" 
-          value={currency}
+          value={valueSelected}
           onChange={(e)=>onChange(e)}>
           {availible.map((item, index) => (<option value={item} key={item+index}>{item}</option>))}
         </FormControl>

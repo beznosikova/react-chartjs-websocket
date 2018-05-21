@@ -39,9 +39,11 @@ class CurrentExchangeRates extends Component {
       <div>
         <FormExchange
     	    onChange={this.onChange.bind(this)}
-          currency={currency}
+          valueSelected={currency}
     	    availible={availible}
-        />
+        >
+          Select currency
+        </FormExchange>
         <CurrenciesTable curenciesList={curencies} currency={currency}/>
       </div>
 

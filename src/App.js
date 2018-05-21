@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CurrentExchangeRates from './CurrentExchangeRates';
 import CurrenciesConverter from './CurrenciesConverter';
+import ChartStatic from './ChartStatic';
 
 import './App.css';
 
@@ -19,7 +20,13 @@ class App extends Component {
         </div>
         <div className="App-intro">
           <CurrenciesConverter availible={availibleCurencies}/>
-        </div>        
+        </div>     
+        <div className="App-intro">
+          <ChartStatic availible={availibleCurencies}/>
+        </div>     
+        <div className="App-intro">
+          <ChartRealTime />
+        </div>  
       </div>
     );
   }
