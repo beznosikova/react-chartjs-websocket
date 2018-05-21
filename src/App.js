@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import CurrentExchangeRates from './CurrentExchangeRates';
 import CurrenciesConverter from './CurrenciesConverter';
 import ChartStatic from './ChartStatic';
+import ChartRealTime from './ChartRealTime';
 
 import './App.css';
 
 const availibleCurencies = ['USD', 'EUR', 'RUB'];
-// const availibleCryptoCurencies = ['Bitcoin', 'Ripple', 'Ethereum', ''];
 
 class App extends Component {
   render() {
